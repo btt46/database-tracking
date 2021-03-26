@@ -14,11 +14,14 @@ def index():
 def track():
     #print(request.get_json())
     data = request.get_json()
-    email = data['post_text']
+    email = data['email']
     email = "'" + email + "'"
 
     res = select_with_key('./users.db','USERS', 'user_email',email)
+    print(type(res))
+    print(res)
     response = {'result': res}
+    
     #print(response)
     return make_response(jsonify(response))
 
