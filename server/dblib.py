@@ -38,7 +38,7 @@ def select_with_key(db_path, table_name, key_name, key_value):
     conn.commit()
     conn.close()
 
-    return data
+    return data[0]
 
 def csv_to_db(db_path, data_path):
     conn = create_connection(db_path)
